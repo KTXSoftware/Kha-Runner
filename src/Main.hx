@@ -7,7 +7,7 @@ class Main {
 		if (Sys.systemName() != "Windows") {
 			var tools = [
 				Path.join([Sys.getCwd(), "Tools", "iojs", "iojs"]),
-				Path.join([Sys.getCwd(), "Tools", "oggenc"]),
+				Path.join([Sys.getCwd(), "Tools", "oggenc", "oggenc"]),
 				Path.join([Sys.getCwd(), "Kore", "Tools", "kfx", "kfx"]),
 				Path.join([Sys.getCwd(), "Kore", "Tools", "kraffiti", "kraffiti"])
 			];
@@ -44,7 +44,9 @@ class Main {
 	private static function sysExt(): String {
 		switch (Sys.systemName()) {
 		case "Linux":
-			return "-linux";
+			var process = new sys.io.Process("uname", ["-m"]);
+			var value = process.stdout.readAll().toString();
+			return "-linux" + (value.indexOf("64") != -1 ? "64" : "32");
 		case "Windows":
 			return ".exe";
 		case "Mac":
