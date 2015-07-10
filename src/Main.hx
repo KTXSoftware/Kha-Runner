@@ -20,10 +20,14 @@ class Main {
 		args.unshift(Path.join([Sys.getCwd(), "Tools", "khamake", "khamake.js"]));
 
 		var project = Path.normalize(args.pop());
-		args.push("from=" + project);
-		args.push("to=" + Path.join([project, "build"]));
-		args.push("haxe=" + haxePath());
-		args.push("kha=" + Path.normalize(Sys.getCwd()));
+		args.push("--from");
+		args.push(project);
+		args.push("--to");
+		args.push(Path.join([project, "build"]));
+		args.push("--haxe");
+		args.push(haxePath());
+		args.push("--kha");
+		args.push(Path.normalize(Sys.getCwd()));
 
 		if (Sys.systemName() == "Windows")
 			Sys.exit(Sys.command('"' + io + '"', args));
