@@ -7,8 +7,10 @@ class Main {
 		if (Sys.systemName() != "Windows") {
 			var tools = [
 				Path.join([Sys.getCwd(), "Tools", "iojs", "iojs"]),
+				Path.join([Sys.getCwd(), "Tools", "kravur", "kravur"]),
 				Path.join([Sys.getCwd(), "Tools", "oggenc", "oggenc"]),
 				Path.join([Sys.getCwd(), "Kore", "Tools", "kfx", "kfx"]),
+				Path.join([Sys.getCwd(), "Kore", "Tools", "krafix", "krafix"]),
 				Path.join([Sys.getCwd(), "Kore", "Tools", "kraffiti", "kraffiti"])
 			];
 			for (tool in tools) chmod(tool);
