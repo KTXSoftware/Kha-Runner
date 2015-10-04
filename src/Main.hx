@@ -6,7 +6,7 @@ class Main {
 	static function main() {
 		if (Sys.systemName() != "Windows") {
 			var tools = [
-				Path.join([Sys.getCwd(), "Tools", "iojs", "iojs"]),
+				Path.join([Sys.getCwd(), "Tools", "nodejs", "node"]),
 				Path.join([Sys.getCwd(), "Tools", "kravur", "kravur"]),
 				Path.join([Sys.getCwd(), "Tools", "oggenc", "oggenc"]),
 				Path.join([Sys.getCwd(), "Kore", "Tools", "kfx", "kfx"]),
@@ -16,7 +16,7 @@ class Main {
 			for (tool in tools) chmod(tool);
 		}
 
-		var io = Path.join([Sys.getCwd(), "Tools", "iojs", "iojs" + sysExt()]);
+		var io = Path.join([Sys.getCwd(), "Tools", "nodejs", "node" + sysExt()]);
 
 		var args = Sys.args();
 		args.unshift(Path.join([Sys.getCwd(), "Tools", "khamake", "khamake.js"]));
