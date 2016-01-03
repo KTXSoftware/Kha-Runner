@@ -1,6 +1,7 @@
 package;
 
 import haxe.io.Path;
+import sys.FileSystem;
 
 class Main {
 	static function main() {
@@ -42,7 +43,12 @@ class Main {
 
 	private static function haxePath(): String {
 		var path = Sys.getEnv("HAXEPATH");
-		if (path == null) path = "/usr/lib/haxe";
+		if (path == null) {
+			path = "/usr/local/lib/haxe";
+			if (!FileSystem.isDirectory(path)) {
+				path = "/usr/lib/haxe";
+			}
+		}
 		return Path.normalize(path);
 	}
 
