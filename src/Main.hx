@@ -9,7 +9,6 @@ class Main {
 				Path.join([Sys.getCwd(), "Tools", "nodejs", "node"]),
 				Path.join([Sys.getCwd(), "Tools", "kravur", "kravur"]),
 				Path.join([Sys.getCwd(), "Tools", "oggenc", "oggenc"]),
-				Path.join([Sys.getCwd(), "Kore", "Tools", "kfx", "kfx"]),
 				Path.join([Sys.getCwd(), "Kore", "Tools", "krafix", "krafix"]),
 				Path.join([Sys.getCwd(), "Kore", "Tools", "kraffiti", "kraffiti"])
 			];
