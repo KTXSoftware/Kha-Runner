@@ -45,7 +45,7 @@ class Main {
 		var path = Sys.getEnv("HAXEPATH");
 		if (path == null) {
 			path = "/usr/local/lib/haxe";
-			if (!FileSystem.isDirectory(path)) {
+			if (!FileSystem.exists(path) || !FileSystem.isDirectory(path)) {
 				path = "/usr/lib/haxe";
 			}
 		}
